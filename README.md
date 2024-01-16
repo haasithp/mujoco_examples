@@ -1,1 +1,2 @@
-# mujoco_slingshot
+# MuJoCo Examples
+![Screenshot](sample.png)
