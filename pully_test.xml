@@ -1,0 +1,284 @@
+<mujoco model="slingshot">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.001" jacobian="dense"/>
+  <size njmax="1500" nconmax="500" nkey="1"/>
+  <visual>
+    <global elevation="-30"/>
+  </visual>
+  <statistic extent="1" center="0 0 0.2"/>
+  <default class="main">
+    <geom friction="0.5 0.005 0.0001" solref="0.01 5" solimp="0.5 0.99 0.001 0.5 2"/>
+  </default>
+  <extension>
+    <plugin plugin="mujoco.elasticity.cable"/>
+  </extension>
+  <worldbody>
+    <geom name="leg1" size="0.02 0.02 0.5" pos="-0.01 0 0.15" type="box" rgba="0 0.7 0 1"/>
+    <light pos="0.5 0 2" dir="0 0 -1"/>
+    <body name="leg2">
+      <geom name="leg2" size="0.02 0.02 0.5" pos="0.45 0 0.15" type="box" rgba="0 0.7 0 1"/>
+    </body>
+    <body name="pulley" pos="0.22 0 0.65" quat="0.707107 0 0.707107 0">
+      <joint name="pin" pos="0 0 0" axis="0 0 1" damping="1"/>
+      <geom size="0.05 0.2" type="cylinder" rgba="0 0.7 0 1"/>
+      <body name="CB0">
+        <geom name="CG0" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+        <body name="CB1" pos="0.02 0 0">
+          <joint name="CJ0_1" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+          <joint name="CJ1_1" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+          <geom name="CG1" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+          <body name="CB2" pos="0.02 0 0">
+            <joint name="CJ0_2" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+            <joint name="CJ1_2" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+            <geom name="CG2" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+            <body name="CB3" pos="0.02 0 0">
+              <joint name="CJ0_3" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+              <joint name="CJ1_3" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+              <geom name="CG3" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+              <body name="CB4" pos="0.02 0 0">
+                <joint name="CJ0_4" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                <joint name="CJ1_4" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                <geom name="CG4" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                <body name="CB5" pos="0.02 0 0">
+                  <joint name="CJ0_5" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                  <joint name="CJ1_5" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                  <geom name="CG5" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                  <body name="CB6" pos="0.02 0 0">
+                    <joint name="CJ0_6" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                    <joint name="CJ1_6" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                    <geom name="CG6" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                    <body name="CB7" pos="0.02 0 0">
+                      <joint name="CJ0_7" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                      <joint name="CJ1_7" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                      <geom name="CG7" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                      <body name="CB8" pos="0.02 0 0">
+                        <joint name="CJ0_8" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                        <joint name="CJ1_8" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                        <geom name="CG8" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                        <body name="CB9" pos="0.02 0 0">
+                          <joint name="CJ0_9" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                          <joint name="CJ1_9" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                          <geom name="CG9" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                          <body name="CB10" pos="0.02 0 0">
+                            <joint name="CJ0_10" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                            <joint name="CJ1_10" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                            <geom name="CG10" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                            <body name="CB11" pos="0.02 0 0">
+                              <joint name="CJ0_11" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                              <joint name="CJ1_11" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                              <geom name="CG11" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                              <body name="CB12" pos="0.02 0 0">
+                                <joint name="CJ0_12" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                <joint name="CJ1_12" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                <geom name="CG12" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                <body name="CB13" pos="0.02 0 0">
+                                  <joint name="CJ0_13" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                  <joint name="CJ1_13" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                  <geom name="CG13" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                  <body name="CB14" pos="0.02 0 0">
+                                    <joint name="CJ0_14" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                    <joint name="CJ1_14" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                    <geom name="CG14" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                    <body name="CB15" pos="0.02 0 0">
+                                      <joint name="CJ0_15" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                      <joint name="CJ1_15" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                      <geom name="CG15" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                      <body name="CB16" pos="0.02 0 0">
+                                        <joint name="CJ0_16" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                        <joint name="CJ1_16" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                        <geom name="CG16" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                        <body name="CB17" pos="0.02 0 0">
+                                          <joint name="CJ0_17" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                          <joint name="CJ1_17" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                          <geom name="CG17" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                          <body name="CB18" pos="0.02 0 0">
+                                            <joint name="CJ0_18" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                            <joint name="CJ1_18" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                            <geom name="CG18" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                            <body name="CB19" pos="0.02 0 0">
+                                              <joint name="CJ0_19" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                              <joint name="CJ1_19" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                              <geom name="CG19" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                              <body name="CB20" pos="0.02 0 0">
+                                                <joint name="CJ0_20" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                <joint name="CJ1_20" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                <geom name="CG20" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                <body name="CB21" pos="0.02 0 0">
+                                                  <joint name="CJ0_21" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                  <joint name="CJ1_21" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                  <geom name="CG21" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                  <body name="CB22" pos="0.02 0 0">
+                                                    <joint name="CJ0_22" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                    <joint name="CJ1_22" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                    <geom name="CG22" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                    <body name="CB23" pos="0.02 0 0">
+                                                      <joint name="CJ0_23" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                      <joint name="CJ1_23" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                      <geom name="CG23" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                      <body name="CB24" pos="0.02 0 0">
+                                                        <joint name="CJ0_24" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                        <joint name="CJ1_24" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                        <geom name="CG24" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                        <body name="CB25" pos="0.02 0 0">
+                                                          <joint name="CJ0_25" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                          <joint name="CJ1_25" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                          <geom name="CG25" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                          <body name="CB26" pos="0.02 0 0">
+                                                            <joint name="CJ0_26" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                            <joint name="CJ1_26" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                            <geom name="CG26" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                            <body name="CB27" pos="0.02 0 0">
+                                                              <joint name="CJ0_27" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                              <joint name="CJ1_27" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                              <geom name="CG27" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                              <body name="CB28" pos="0.02 0 0">
+                                                                <joint name="CJ0_28" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                <joint name="CJ1_28" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                <geom name="CG28" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                <body name="CB29" pos="0.02 0 0">
+                                                                  <joint name="CJ0_29" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                  <joint name="CJ1_29" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                  <geom name="CG29" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                  <body name="CB30" pos="0.02 0 0">
+                                                                    <joint name="CJ0_30" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                    <joint name="CJ1_30" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                    <geom name="CG30" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                    <body name="CB31" pos="0.02 0 0">
+                                                                      <joint name="CJ0_31" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                      <joint name="CJ1_31" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                      <geom name="CG31" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                      <body name="CB32" pos="0.02 0 0">
+                                                                        <joint name="CJ0_32" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                        <joint name="CJ1_32" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                        <geom name="CG32" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                        <body name="CB33" pos="0.02 0 0">
+                                                                          <joint name="CJ0_33" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                          <joint name="CJ1_33" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                          <geom name="CG33" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                          <body name="CB34" pos="0.02 0 0">
+                                                                            <joint name="CJ0_34" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                            <joint name="CJ1_34" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                            <geom name="CG34" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                            <body name="CB35" pos="0.02 0 0">
+                                                                              <joint name="CJ0_35" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                              <joint name="CJ1_35" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                              <geom name="CG35" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                              <body name="CB36" pos="0.02 0 0">
+                                                                                <joint name="CJ0_36" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                <joint name="CJ1_36" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                <geom name="CG36" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                <body name="CB37" pos="0.02 0 0">
+                                                                                  <joint name="CJ0_37" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                  <joint name="CJ1_37" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                  <geom name="CG37" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                  <body name="CB38" pos="0.02 0 0">
+                                                                                    <joint name="CJ0_38" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                    <joint name="CJ1_38" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                    <geom name="CG38" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                    <body name="CB39" pos="0.02 0 0">
+                                                                                      <joint name="CJ0_39" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                      <joint name="CJ1_39" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                      <geom name="CG39" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                      <body name="CB40" pos="0.02 0 0">
+                                                                                        <joint name="CJ0_40" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                        <joint name="CJ1_40" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                        <geom name="CG40" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                        <body name="CB41" pos="0.02 0 0">
+                                                                                          <joint name="CJ0_41" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                          <joint name="CJ1_41" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                          <geom name="CG41" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                          <body name="CB42" pos="0.02 0 0">
+                                                                                            <joint name="CJ0_42" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                            <joint name="CJ1_42" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                            <geom name="CG42" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                            <body name="CB43" pos="0.02 0 0">
+                                                                                              <joint name="CJ0_43" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                              <joint name="CJ1_43" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                              <geom name="CG43" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                              <body name="CB44" pos="0.02 0 0">
+                                                                                                <joint name="CJ0_44" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                <joint name="CJ1_44" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                <geom name="CG44" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                <body name="CB45" pos="0.02 0 0">
+                                                                                                  <joint name="CJ0_45" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                  <joint name="CJ1_45" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                  <geom name="CG45" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                  <body name="CB46" pos="0.02 0 0">
+                                                                                                    <joint name="CJ0_46" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                    <joint name="CJ1_46" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                    <geom name="CG46" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                    <body name="CB47" pos="0.02 0 0">
+                                                                                                      <joint name="CJ0_47" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                      <joint name="CJ1_47" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                      <geom name="CG47" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                      <body name="CB48" pos="0.02 0 0">
+                                                                                                        <joint name="CJ0_48" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                        <joint name="CJ1_48" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                        <geom name="CG48" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                        <body name="CB49" pos="0.02 0 0">
+                                                                                                          <joint name="CJ0_49" pos="-0.01 0 0" axis="0 1 0" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                          <joint name="CJ1_49" pos="-0.01 0 0" axis="0 0 1" group="3" armature="1e-05" damping="0.0001"/>
+                                                                                                          <geom name="CG49" size="0.005 0.01" quat="0.707107 0 0.707107 0" type="capsule" friction="1 0.005 0.0001" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" rgba="0.8 0.2 0.1 1"/>
+                                                                                                        </body>
+                                                                                                      </body>
+                                                                                                    </body>
+                                                                                                  </body>
+                                                                                                </body>
+                                                                                              </body>
+                                                                                            </body>
+                                                                                          </body>
+                                                                                        </body>
+                                                                                      </body>
+                                                                                    </body>
+                                                                                  </body>
+                                                                                </body>
+                                                                              </body>
+                                                                            </body>
+                                                                          </body>
+                                                                        </body>
+                                                                      </body>
+                                                                    </body>
+                                                                  </body>
+                                                                </body>
+                                                              </body>
+                                                            </body>
+                                                          </body>
+                                                        </body>
+                                                      </body>
+                                                    </body>
+                                                  </body>
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="weight" pos="0.2225 0 -0.355">
+      <joint type="free"/>
+      <geom size="0.025 0.15 0.025" type="box" rgba="0.2 0.2 0.7 1"/>
+    </body>
+  </worldbody>
+  <equality>
+    <connect body1="weight" body2="CB49" anchor="0 0 0" solref="-10000 -1000"/>
+  </equality>
+  <actuator>
+    <general name="motor" joint="pin" ctrlrange="-10 10"/>
+  </actuator>
+</mujoco>
